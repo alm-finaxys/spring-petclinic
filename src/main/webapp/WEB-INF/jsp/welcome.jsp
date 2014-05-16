@@ -5,7 +5,6 @@
 
 
 <html lang="en">
-
 <jsp:include page="fragments/headTag.jsp"/>
 
 <body>
@@ -20,5 +19,4 @@
 
 </div>
 </body>
-
 </html>
