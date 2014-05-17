@@ -464,7 +464,9 @@
           <port>4516</port>
           <secured>true</secured>
           <timestamped>false</timestamped>
-          <orchestrator>sequential-by-deployment-group</orchestrator>
+          <orchestrator>
+            <value>sequential-by-deployment-group</value>
+          </orchestrator>
           <generateDeployedOnUpgrade>true</generateDeployedOnUpgrade>
           <deletePreviouslyDeployedDar>true</deletePreviouslyDeployedDar>
           <deployables>
