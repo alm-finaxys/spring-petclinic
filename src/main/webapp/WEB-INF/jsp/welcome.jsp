@@ -9,7 +9,6 @@
 
 <body>
 <H3>{{welcome.message}} (VERSION : ${project.version})</H3>
-<H4>For SGCIB</H4>
 
 <div class="container">
     <jsp:include page="fragments/bodyHeader.jsp"/>
