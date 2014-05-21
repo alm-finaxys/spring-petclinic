@@ -7,6 +7,7 @@
 <html lang="en">
 <jsp:include page="fragments/headTag.jsp"/>
 
+
 <body>
 <H3>{{welcome.message}} (VERSION : ${project.version})</H3>
 
