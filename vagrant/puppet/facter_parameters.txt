@@ -27,7 +27,7 @@ export FACTER_DEV_CLOUD_TOMCAT_HTTP_TEST_VERSION_TAG=TEST-VERSION
 
 # properties of the dictionary
 export FACTER_DEV_CLOUD_ENV_DICTIONARY_ID="Environments/POC/POC-PIPELINE-CD/DEV/dev.dico"
-export FACTER_DEV_CLOUD_TEST_URL=http://192.168.1.50:8080/petclinic
+export FACTER_DEV_CLOUD_TEST_URL="http://192.168.1.50:8080/petclinic"
 export FACTER_DEV_CLOUD_ENVIRONMENT=DEVELOPMENT
 
 # properties of the environment
