@@ -1,0 +1,30 @@
+# properties of the deployit server
+export FACTER_USERNAME_DEPLOYIT=$USERNAMEDEPLOYIT 
+export FACTER_PASSWORD_DEPLOYIT=$PASSWORDDEPLOYIT 
+export FACTER_URL_DEPLOYIT=
+
+# properties of the host
+export FACTER_DEV_CLOUD_HOST_ID="Infrastructure/PIPELINE_DEMO/DEV/TOMCAT (VAGRANT+PUPPET)"
+export FACTER_DEV_CLOUD_HOST_ADDRESS=192.168.1.50 # PROVIDED BY CLOUD PROVISIONER "IRL"
+export FACTER_DEV_CLOUD_HOST_USERNAME=vagrant # PROVIDED BY CLOUD PROVISIONER "IRL"
+export FACTER_DEV_CLOUD_HOST_PASSWORD=vagrant # PROVIDED BY CLOUD PROVISIONER "IRL"
+export FACTER_DEV_CLOUD_HOST_SUDOUSERNAME=vagrant # PROVIDED BY CLOUD PROVISIONER "IRL"
+
+# properties of the tomcat server
+export FACTER_DEV_CLOUD_TOMCAT_ID="Infrastructure/PIPELINE_DEMO/DEV/TOMCAT (VAGRANT+PUPPET)/tomcat-dev-cloud"
+export FACTER_DEV_CLOUD_TOMCAT_STARTCOMMAND=/var/lib/tomcat7/bin/startup.sh
+export FACTER_DEV_CLOUD_TOMCAT_STOPCOMMAND=/var/lib/tomcat7/bin/shutdown.sh
+export FACTER_DEV_CLOUD_TOMCAT_HOME=/var/lib/tomcat7
+
+# properties of the tomcat virtual host
+export FACTER_DEV_CLOUD_TOMCAT_VIRTUALHOST_ID="Infrastructure/PIPELINE_DEMO/DEV/TOMCAT (VAGRANT+PUPPET)/tomcat-dev-cloud/tomcat-dev-cloud-vh"
+
+# properties of the test runners
+export FACTER_DEV_CLOUD_TOMCAT_HTTP_TEST_ENV_ID="Infrastructure/PIPELINE_DEMO/DEV/TOMCAT (VAGRANT+PUPPET)/http-test-env"
+export FACTER_DEV_CLOUD_TOMCAT_HTTP_TEST_VERSION_ID="Infrastructure/PIPELINE_DEMO/DEV/TOMCAT (VAGRANT+PUPPET)/http-test-version"
+
+# properties of the environment
+TBC
+
+# properties of the application
+TBC
