@@ -25,6 +25,9 @@ export FACTER_DEV_CLOUD_TOMCAT_HTTP_TEST_ENV_TAG=TEST-ENV
 export FACTER_DEV_CLOUD_TOMCAT_HTTP_TEST_VERSION_ID="Infrastructure/PIPELINE_DEMO/DEV/TOMCAT (VAGRANT+PUPPET)/http-test-version"
 export FACTER_DEV_CLOUD_TOMCAT_HTTP_TEST_VERSION_TAG=TEST-VERSION
 
+# properties of the dictionary
+export FACTER_DEV_CLOUD_ENV_DICTIONARY_ID="Environments/POC/POC-PIPELINE-CD/DEV/dev.dico"
+
 # properties of the environment
 TBC
 
