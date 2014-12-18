@@ -2,8 +2,8 @@
 
 # XL DEPLOY SERVER SETTINGS
 deployit { 'deployit-pipeline-demo': 
-  username => $username_deployit, 
-  password => $password_deployit, 
+  username => pipelinedemo_dev, 
+  password => pipelinedemo_dev, 
   url => $url_deployit
 } 
 
@@ -21,7 +21,7 @@ deployit_container { $dev_cloud_host_id :
    server => Deployit['deployit-pipeline-demo'], 
 } 
 
-deployit_container { $dev_cloud_tomcat_id: 
+deployit_container { $dev_cloud_tomcat_id : 
   ensure => present,
   type => 'tomcat.Server',
   require => Deployit_container[$dev_cloud_host_id],
@@ -69,4 +69,17 @@ deployit_ dictionary { $dev_cloud_dictionary_id :
 }
 
 # ENVIRONMENT SETTINGS
-TBC
+deployit_environment { $dev_cloud_env_id :
+  ensure => present,
+  containers => [ $dev_cloud_host_id,$dev_cloud_tomcat_id,$dev_cloud_tomcat_virtualhost_id,$dev_cloud_tomcat_http_test_env_id,$dev_cloud_tomcat_http_test_version_id]
+   dictionaries => [ $dev_cloud_dictionary_id ]
+  server => Deployit['deployit-pipeline-demo'] 
+  }
+  
+# APPLICATION SETTINGS
+deployed_application { $dev_cloud_deployed_application : 
+  version => $dev_cloud_deployable_id,
+  environment => $dev_cloud_env_id,
+  require => Deployit_container [ $dev_cloud_tomcat_virtualhost_id,$dev_cloud_tomcat_http_test_env_id,$dev_cloud_tomcat_http_test_version_id ]
+  server => Deployit['deployit-pipeline-demo'] 
+} 
