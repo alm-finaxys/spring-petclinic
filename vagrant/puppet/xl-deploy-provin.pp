@@ -40,6 +40,7 @@ deployit_container { $dev_cloud_tomcat_http_test_env_id :
   properties => {
     deploymentGroup => 2
   }, 
+  # TBC : HOW TO INCLUDE TAGS?
   server => Deployit['deployit-pipeline-demo'] 
   } 
   
@@ -49,6 +50,7 @@ deployit_container { $dev_cloud_tomcat_http_test_version_id :
   properties => {
     deploymentGroup => 3
   },
+  # TBC : HOW TO INCLUDE TAGS?
   server => Deployit['deployit-pipeline-demo'] 
   }
   
