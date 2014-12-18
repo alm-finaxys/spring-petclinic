@@ -1,9 +1,13 @@
+# XL DEPLOY INFRA/DICTIONARY/ENVIRONMENT/APPLICATION PROVISIONING THROUGH PUPPET MODULE ON A PROVISIONED UNIX+TOMCAT7 VM 
+
+# XL DEPLOY SERVER SETTINGS
 deployit { 'deployit-pipeline-demo': 
   username => $username_deployit, 
   password => $password_deployit, 
   url => $url_deployit
 } 
 
+# INFRA SETTINGS
 deployit_container { $dev_cloud_host_id :
   ensure => present, 
   type => 'overthere.SshHost', 
@@ -54,4 +58,15 @@ deployit_container { $dev_cloud_tomcat_http_test_version_id :
   server => Deployit['deployit-pipeline-demo'] 
   }
   
-#deployit_ dictionary { 'Environments/POC/POC-PIPELINE-CD/DEV/dev.dico' : server => Deployitf'deplOyit-dev'j, before => Deployit_environmentl'Environments/POC/POC-PIPELINE-CD/DEV/dev.env` 
+# DICTIONARIES SETTINGS  
+deployit_ dictionary { $dev_cloud_dictionary_id : 
+  before => $dev_cloud_env_id,   
+  entries => {
+    'test.url' => $dev_cloud_test_url_id,
+    'environment' => $dev_cloud_environment
+    }
+  server => Deployit['deployit-pipeline-demo'] 
+}
+
+# ENVIRONMENT SETTINGS
+TBC
