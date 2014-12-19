@@ -34,3 +34,8 @@ export FACTER_DEV_CLOUD_ENVIRONMENT=DEVELOPMENT
 # properties of the application
 export FACTER_DEV_CLOUD_DEPLOYED_APPLICATION="CLOUD/SYSTEM/SERVER/APPLICATION PROVISIONING DONE." 
 export FACTER_DEV_CLOUD_DEPLOYABLE_ID=Applications/PIPELINE_DEMO/petclinic/${PIPELINE_VERSION}
+
+# MAIN LOOP
+facter >> /dev/null
+puppet apply xl-deploy-provin.pp --detailed-exitcodes
+exit $?
