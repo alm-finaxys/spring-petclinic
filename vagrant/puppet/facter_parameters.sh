@@ -37,5 +37,5 @@ export FACTER_DEV_CLOUD_DEPLOYABLE_ID=Applications/PIPELINE_DEMO/petclinic/${PIP
 
 # MAIN LOOP
 facter >> /dev/null
-puppet apply xl-deploy-provin.pp --detailed-exitcodes
+puppet apply xl-deploy-provin.pp --detailed-exitcodes --modulepath=${PUPPET-XLDEPLOY-MODULE_HOME}
 exit $?
