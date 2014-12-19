@@ -1,3 +1,4 @@
+#!/bin/bash
 # properties of the deployit server
 export FACTER_XLDEPLOY_REST_URL=${XLDEPLOY_REST_URL}
 
