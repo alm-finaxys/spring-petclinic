@@ -20,8 +20,8 @@ xldeploy_ci { $dev_cloud_tomcat_id :
   type => 'tomcat.Server',
   require => Deployit_container[$dev_cloud_host_id],
   properties => { 
-    startCommand => $dev_cloud_tomcat_startcommand
-    stopCommand => $dev_cloud_tomcat_stopcommand
+    startCommand => $dev_cloud_tomcat_startcommand,
+    stopCommand => $dev_cloud_tomcat_stopcommand,
     home => $dev_cloud_tomcat_home 
   },
 rest_url => $xldeploy_rest_url
