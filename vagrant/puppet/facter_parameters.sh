@@ -2,7 +2,6 @@
 # properties of the deployit server
 export FACTER_XLDEPLOY_REST_URL=${XLDEPLOY_REST_URL}
 
-
 # properties of the host
 export FACTER_DEV_CLOUD_HOST_ID="Infrastructure/PIPELINE_DEMO/DEV/TOMCAT (VAGRANT+PUPPET)"
 export FACTER_DEV_CLOUD_HOST_ADDRESS=192.168.1.50 # PROVIDED BY CLOUD PROVISIONER "IRL"
