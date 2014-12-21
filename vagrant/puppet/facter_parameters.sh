@@ -37,9 +37,9 @@ export FACTER_DEV_CLOUD_DEPLOYABLE_ID=Applications/PIPELINE_DEMO/petclinic/${PIP
 
 # MAIN LOOP
 mkdir -p ~/.puppet/modules
-cp -rf ${PUPPET_XLDEPLOY_MODULE_HOME} ~/.puppet/modules/ 
+#cp -rf ${PUPPET_XLDEPLOY_MODULE_HOME} ~/.puppet/modules/ 
 facter >> /dev/null
 
 echo PUPPET_XLDEPLOY_MODULE_HOME : ${PUPPET_XLDEPLOY_MODULE_HOME}
-puppet apply vagrant/puppet/xl-deploy-provin.pp --detailed-exitcodes
+puppet apply vagrant/puppet/xl-deploy-provin.pp --detailed-exitcodes --modulepath=${PUPPET_XLDEPLOY_MODULE_HOME}
 exit $?
