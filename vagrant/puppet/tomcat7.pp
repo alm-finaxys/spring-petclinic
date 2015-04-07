@@ -29,8 +29,7 @@ class system-update {
   $sysPackages = [ "build-essential" ]
   package { $sysPackages:
     ensure => "installed",
-    require => Exec['apt-get update'],
-    require => Exec['sudo grant for vagrant account on tomcat7 account'],
+    require => Exec['apt-get update', 'sudo grant for vagrant account on tomcat7 account'],
   }
 }
 
