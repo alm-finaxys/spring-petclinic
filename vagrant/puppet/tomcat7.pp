@@ -23,7 +23,7 @@ class system-update {
 
 # S. GUCLU : tweak used to disable authentication issues on sudo-managed deployments
   exec { 'sudo grant for vagrant account on tomcat7 account':
-    command => 'sudo echo "tomcat7 ALL=NOPASSWD:ALL" >> /etc/sudoers.d/vagrant',
+    command => 'sudo usermod -a -G vagrant tomcat7',
  }
  
   $sysPackages = [ "build-essential" ]
