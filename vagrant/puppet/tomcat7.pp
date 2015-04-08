@@ -55,7 +55,8 @@ file { '/var/lib/tomcat7/lib':
    target => '/usr/share/tomcat7/lib',
 }
 
-  # S. GUCLU : tweak used to disable authentication issues on sudo-managed deployments
+# S. GUCLU : tweak used to disable authentication issues on sudo-managed deployments
 exec { 'sudo usermod -a -G vagrant tomcat7':
    command => 'sudo usermod -a -G vagrant tomcat7',
+   require => Service["tomcat7"],
 }
