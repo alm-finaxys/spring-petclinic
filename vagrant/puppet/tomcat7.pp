@@ -27,11 +27,7 @@ class system-update {
 }
 
 class tomcat7 {
-  # S. GUCLU : tweak used to disable authentication issues on sudo-managed deployments
-  exec { 'sudo usermod -a -G vagrant tomcat7':
-    command => 'sudo usermod -a -G vagrant tomcat7',
-  }
-
+ 
   package { "tomcat7":
     ensure => present,
     require => Class["system-update"],
@@ -39,7 +35,7 @@ class tomcat7 {
  
   service { "tomcat7":
     ensure => "running",
-    require => [ Package["tomcat7"], Exec['sudo usermod -a -G vagrant tomcat7'] ]
+    require => Package["tomcat7"],
   }
  
 }
@@ -59,3 +55,7 @@ file { '/var/lib/tomcat7/lib':
    target => '/usr/share/tomcat7/lib',
 }
 
+  # S. GUCLU : tweak used to disable authentication issues on sudo-managed deployments
+exec { 'sudo usermod -a -G vagrant tomcat7':
+   command => 'sudo usermod -a -G vagrant tomcat7',
+}
