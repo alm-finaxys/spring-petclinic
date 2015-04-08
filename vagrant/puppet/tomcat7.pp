@@ -56,13 +56,7 @@ file { '/var/lib/tomcat7/lib':
    target => '/usr/share/tomcat7/lib',
 }
 
-class tomcat7-sudo {
 # S. GUCLU : tweak used to disable authentication issues on sudo-managed deployments
-  exec { 'sudo grant for vagrant account on tomcat7 account':
+Exec { 'sudo grant for vagrant account on tomcat7 account':
     command => 'sudo usermod -a -G vagrant tomcat7',
   }
-  
-  package { tomcat7-sudo:
-    require => Exec['tomcat7-sudo'],
-  }
-}
