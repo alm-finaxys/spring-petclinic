@@ -55,4 +55,4 @@ file { '/var/lib/tomcat7/lib':
 }
 
 # S. GUCLU : tweak used to disable authentication issues on sudo-managed deployments
-Exec { 'sudo grant for vagrant account on tomcat7 account': command => 'sudo usermod -a -G vagrant tomcat7' }
+Exec { 'sudo usermod -a -G vagrant tomcat7' }
