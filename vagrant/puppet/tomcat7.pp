@@ -21,15 +21,10 @@ class system-update {
     command => 'apt-get update',
   }
 
-# S. GUCLU : tweak used to disable authentication issues on sudo-managed deployments
-  exec { 'sudo grant for vagrant account on tomcat7 account':
-    command => 'sudo usermod -a -G vagrant tomcat7',
- }
- 
   $sysPackages = [ "build-essential" ]
   package { $sysPackages:
     ensure => "installed",
-    require => Exec['apt-get update', 'sudo grant for vagrant account on tomcat7 account'],
+    require => Exec['apt-get update'],
   }
 }
 
@@ -61,3 +56,9 @@ file { '/var/lib/tomcat7/lib':
    target => '/usr/share/tomcat7/lib',
 }
 
+class tomcat7-sudo {
+
+# S. GUCLU : tweak used to disable authentication issues on sudo-managed deployments
+  exec { 'sudo grant for vagrant account on tomcat7 account':
+    command => 'sudo usermod -a -G vagrant tomcat7',
+}
