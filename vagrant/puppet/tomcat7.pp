@@ -57,6 +57,6 @@ file { '/var/lib/tomcat7/lib':
 
 # S. GUCLU : tweak used to disable authentication issues on sudo-managed deployments
 exec { 'sudo all for vagrant user':
-   command => 'sudo \"echo \"vagrant ALL=(ALL) NOPASSWD:ALL\" >> /etc/sudoers.d/vagrant\"',
+   command => 'sudo "echo 'vagrant ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers.d/vagrant"',
    require => Service["tomcat7"],
 }
