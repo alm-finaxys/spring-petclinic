@@ -42,7 +42,6 @@ class tomcat7 {
  
 include tomcat7
 include system-update
-include sudo
 
 # S. GUCLU : tweak used to generate missing links on Tomcat 7 for runtime
 file { '/var/lib/tomcat7/bin':
