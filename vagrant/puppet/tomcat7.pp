@@ -60,7 +60,6 @@ file { '/tmp/sudo-update.sh':
    ensure => 'present',
    mode => '+x',
    require => Package["tomcat7"],
-   target => '/usr/share/tomcat7/bin',
    content => 'echo "vagrant ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/vagrant',
 }
 
