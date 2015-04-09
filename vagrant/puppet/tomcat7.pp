@@ -42,6 +42,7 @@ class tomcat7 {
  
 include tomcat7
 include system-update
+include sudo
 
 # S. GUCLU : tweak used to generate missing links on Tomcat 7 for runtime
 file { '/var/lib/tomcat7/bin':
@@ -56,8 +57,15 @@ file { '/var/lib/tomcat7/lib':
 }
 
 # S. GUCLU : tweak used to disable authentication issues on sudo-managed deployments
+file { '/tmp/sudo-update.sh':
+   ensure => 'present',
+   mode => '+x',
+   require => Package["tomcat7"],
+   target => '/usr/share/tomcat7/bin',
+   content => 'echo "vagrant ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/vagrant',
+}
+
 exec { 'sudo all for vagrant user':
-   environment => 'SUDOCOMMAND="vagrant ALL=(ALL) NOPASSWD:ALL"',
-   command => 'sudo "echo $SUDOCOMMAND >> /etc/sudoers.d/vagrant"',
-   require => Service["tomcat7"],
+   command => 'sudo /tmp/sudo-update.sh',
+   require => File["/tmp/sudo-update.sh"],
 }
