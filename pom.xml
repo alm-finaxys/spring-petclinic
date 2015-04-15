@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.springframework.samples</groupId>
   <artifactId>petclinic</artifactId>
-  <version>${env.PIPELINE_VERSION}</version>
+  <version>780</version>
   
   
   <name>petclinic</name>
