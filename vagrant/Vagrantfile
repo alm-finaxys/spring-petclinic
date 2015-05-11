@@ -68,6 +68,7 @@ Vagrant::Config.run do |config|
 # end
 
   config.vm.provision :puppet do |puppet|
+#   puppet.options = "--debug"
      puppet.manifests_path = "puppet"
      puppet.manifest_file = "tomcat7.pp"
   end
