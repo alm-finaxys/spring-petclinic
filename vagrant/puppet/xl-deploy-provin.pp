@@ -36,7 +36,7 @@ xldeploy_ci { $dev_cloud_tomcat_virtualhost_id :
  
 xldeploy_ci { $dev_cloud_tomcat_http_test_env_id :
   type => 'tests2.TestRunner', 
-  require => Deployit_container[ $dev_cloud_host_id ] ,
+  require => Deployit_container[$dev_cloud_host_id] ,
   properties => {
     deploymentGroup => 2
   }, 
@@ -46,7 +46,7 @@ xldeploy_ci { $dev_cloud_tomcat_http_test_env_id :
   
 xldeploy_ci { $dev_cloud_tomcat_http_test_version_id :
   type => 'tests2.TestRunner', 
-  require => Deployit_container[ $dev_cloud_host_id ] ,
+  require => Deployit_container[$dev_cloud_host_id] ,
   properties => {
     deploymentGroup => 3
   },
@@ -76,6 +76,6 @@ xldeploy_ci { $dev_cloud_env_id :
 xldeploy_ci { $dev_cloud_deployed_application : 
   version => $dev_cloud_deployable_id,
   environment => $dev_cloud_env_id,
-  require => Deployit_container [ $dev_cloud_tomcat_virtualhost_id,$dev_cloud_tomcat_http_test_env_id,$dev_cloud_tomcat_http_test_version_id ],
+  require => Deployit_container [$dev_cloud_tomcat_virtualhost_id,$dev_cloud_tomcat_http_test_env_id,$dev_cloud_tomcat_http_test_version_id],
   rest_url => $xldeploy_rest_url
 } 
