@@ -40,11 +40,16 @@ mkdir -p ~/.puppet/modules
 cp -rf ${PUPPET_XLDEPLOY_MODULE_HOME} ~/.puppet/modules/ 
 facter >> /dev/null
 
-echo "puppet version used"
+"show modulepath content"
+ls -lrt ~/.puppet/modules
+
+echo "puppet version used and modulepath"
 puppet --version
+puppet config print modulepath
 
 
 #echo PUPPET_XLDEPLOY_MODULE_HOME : ${PUPPET_XLDEPLOY_MODULE_HOME}
 echo "RUNNING puppet apply vagrant/puppet/xl-deploy-provin.pp --detailed-exitcodes"
-puppet apply vagrant/puppet/xl-deploy-provin.pp --detailed-exitcodes --debug #--modulepath=${PUPPET_XLDEPLOY_MODULE_HOME}
+puppet apply vagrant/puppet/xl-deploy-provin.pp --detailed-exitcodes --debug
+#--modulepath=${PUPPET_XLDEPLOY_MODULE_HOME}
 exit $?
