@@ -50,6 +50,5 @@ puppet config print modulepath
 
 #echo PUPPET_XLDEPLOY_MODULE_HOME : ${PUPPET_XLDEPLOY_MODULE_HOME}
 echo "RUNNING puppet apply vagrant/puppet/xl-deploy-provin.pp --detailed-exitcodes"
-puppet apply vagrant/puppet/xl-deploy-provin.pp --detailed-exitcodes --debug
-#--modulepath=${PUPPET_XLDEPLOY_MODULE_HOME}
+puppet apply --modulepath=${PUPPET_XLDEPLOY_MODULE_HOME} vagrant/puppet/xl-deploy-provin.pp --detailed-exitcodes --debug
 exit $?
