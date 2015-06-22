@@ -38,14 +38,14 @@ export FACTER_DEV_CLOUD_DEPLOYABLE_ID=Applications/PIPELINE_DEMO/petclinic/${PIP
 # MAIN LOOP
 mkdir -p ~/.puppet/modules
 cp -rf ${PUPPET_XLDEPLOY_MODULE_HOME} ~/.puppet/modules/ 
+
 facter >> /dev/null
 
 "show modulepath content"
-ls -lrt ~/.puppet/modules
+ls -lrt ~/.puppet/modules/xebialabs-xldeploy-1.2.2/lib/puppet_x/xebialabs/xldeploy/ci.rb
 
 echo "puppet version used and modulepath"
 puppet --version
-puppet config print modulepath
 
 
 #echo PUPPET_XLDEPLOY_MODULE_HOME : ${PUPPET_XLDEPLOY_MODULE_HOME}
