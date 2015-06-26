@@ -41,7 +41,7 @@ cp -rf ${PUPPET_XLDEPLOY_MODULE_HOME} ~/.puppet/modules/
 
 facter >> /dev/null
 
-"show modulepath content"
+echo "show modulepath content"
 ls -lrt ~/.puppet/modules/xebialabs-xldeploy-1.2.2/lib/puppet_x/xebialabs/xldeploy/ci.rb
 
 echo "puppet version used and modulepath"
