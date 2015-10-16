@@ -9,3 +9,4 @@ FORK FROM OFFICIAL SPRINGSOURCE APPLICATION, PLEASE REFER TO IT FOR COMPLETE DOC
 - maven filtering added (version management) in jsp
 - "mustache" parameter (i.e. {{parameter}}) added in jsp
 - deployit setup added in pom.xml
+- 
