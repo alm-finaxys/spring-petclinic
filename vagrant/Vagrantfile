@@ -19,3 +19,5 @@ Vagrant.configure("2") do |config|
      puppet.manifests_path = "puppet"
      puppet.manifest_file = "tomcat7.pp"
   end
+
+end
