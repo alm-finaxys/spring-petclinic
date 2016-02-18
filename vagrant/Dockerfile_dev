@@ -8,4 +8,6 @@ WORKDIR /tmp/puppet
 
 RUN puppet apply /tmp/puppet/tomcat7.pp
 
+RUN chmod +x /tmp/puppet/tomcat_start.sh
+
 ENTRYPOINT [ "/tmp/puppet/tomcat_start.sh"]
