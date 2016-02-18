@@ -5,17 +5,17 @@
 # description: created VM and provisions basic tools for continuous deployment chain
 
 Vagrant.configure("2") do |config|
+  
+  ENV['VAGRANT_DEFAULT_PROVIDER'] = 'docker'
+
   config.vm.provider "docker" do |d|
     d.image="ubuntu:14.04"
-    d.remains_running=true
-    d.cmd=["/bin/bash"]
-    d.create_args=["-it"]
+    d.has_ssh = true
   end
   
+  config.ssh.port = 22
+
   config.vm.provision :puppet do |puppet|
-     #puppet.options = "--debug"
      puppet.manifests_path = "puppet"
      puppet.manifest_file = "tomcat7.pp"
   end
-  
-end
