@@ -8,4 +8,4 @@ WORKDIR /tmp/puppet
 
 RUN puppet apply /tmp/puppet/tomcat7.pp
 
-ENTRYPOINT [ "/etc/init.d/tomcat7", "start"]
+#ENTRYPOINT [ "/etc/init.d/tomcat7", "start"]
