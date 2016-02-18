@@ -7,3 +7,5 @@ COPY puppet /tmp/
 WORKDIR /tmp/puppet
 
 RUN puppet apply 
+
+ENTRYPOINT [ "/etc/init.d/tomcat7", "start"]
