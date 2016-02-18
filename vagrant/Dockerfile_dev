@@ -1,0 +1,9 @@
+FROM  ubuntu:14.04
+
+RUN apt-get update && apt-get install -y puppet
+
+COPY puppet /tmp/
+
+WORKDIR /tmp/puppet
+
+RUN puppet apply 
