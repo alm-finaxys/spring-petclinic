@@ -10,6 +10,6 @@ RUN puppet apply /tmp/puppet/tomcat7.pp
 
 RUN chmod +x /tmp/puppet/tomcat_start.sh
 
-EXPOSE 8080
+EXPOSE 8080 22
 
 ENTRYPOINT [ "/tmp/puppet/tomcat_start.sh"]
