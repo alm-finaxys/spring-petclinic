@@ -9,7 +9,7 @@
 
 
 <body>
-<H3>{{welcome.message}} (VERSION : ${project.version})</H3>
+<H3>PETCLINIC VERSION : ${project.version}</H3>
 
 <div class="container">
     <jsp:include page="fragments/bodyHeader.jsp"/>
